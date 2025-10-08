@@ -1,0 +1,30 @@
+🧠 Intro to LAN – Summary
+
+*A Local Area Network (LAN) connects devices within a small area (like a school, home, or office).
+
+-Main devices: Router, Switch, Access Point, and Hosts (computers/laptops).
+-The router connects the LAN to the internet and assigns IPs using DHCP.
+-The switch connects multiple devices and uses MAC addresses to forward frames.
+-IP Address = identifies a device on the network.
+-MAC Address = unique hardware identifier for network communication.
+-Subnet Mask = defines which IPs are part of your local network.
+-Default Gateway = the router’s IP that sends traffic out of your LAN.
+-DNS (Domain Name System) = converts domain names (like google.com) into IPs.
+-ARP (Address Resolution Protocol) = maps IP addresses to MAC addresses.
+
+
+
+Commands I Practiced:
+
+-ipconfig → shows IP, subnet, and gateway.
+-ping → checks connectivity with another device or website.
+-arp -a → shows IP -- MAC address mappings.
+-tracert → shows the path packets take to reach a destination (like 8.8.8.8).
+
+What I Learned:
+
+-How devices inside a LAN communicate using MAC and IP addresses.
+-How packets move from my device → router → internet.
+-How to analyze network connectivity using basic commands.
+
+*Understanding this is essential for networking and cybersecurity basics.
