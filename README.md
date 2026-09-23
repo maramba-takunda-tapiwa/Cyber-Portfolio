@@ -1,7 +1,7 @@
 # Cyber-Portfolio
 # Cyber-Portfolio
 
-First-year Computer Science student (University of Debrecen) building 
+Second-year Computer Science student (University of Debrecen) building 
 toward a SOC Analyst role, with a longer-term goal of Junior Penetration 
 Tester. This repo documents hands-on lab work, attack/detection exercises, 
 and foundational study as I work through it.
