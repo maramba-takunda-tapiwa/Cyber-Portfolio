@@ -235,6 +235,7 @@ Macro calls PowerShell
 PowerShell downloads/executes malware
     ↓
 4688 log: winword.exe → powershell.exe (elevated)
+
 ```
 
 **MITRE ATT&CK mapping (to revisit in Frameworks tier):**
@@ -242,6 +243,9 @@ PowerShell downloads/executes malware
 - T1059.001 — Command and Scripting Interpreter: PowerShell (execution)
 
 ---
+**Quick Things to note which were left out :**
+-Event ID 4104 (PowerShell Script Block Logging). My own phishing scenario at the bottom ends at "PowerShell downloads/executes malware" — but 4688 only tells you PowerShell launched, not what it did. 4104 is what shows the actual commands run inside that PowerShell session. Without it, you can see the door opened but not what happened in the room. Worth a short addition, not a new file.
+-Event ID 1102 (audit log cleared). This is the "attacker covering their tracks" event — one of the most commonly expected Event IDs because it's the signal that something was deliberately hidden
 
 ## True/False Positive Reminder (from networking tier, reinforced here)
 
