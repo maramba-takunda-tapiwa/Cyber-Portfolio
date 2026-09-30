@@ -119,7 +119,7 @@ reboot    system boot  Thu Jul 9  02:14 - 03:29
 - `crash` = connection terminated abruptly without clean logout (what netcat does when closed)
 - No preceding SSH login = not a legitimate remote admin session
 
-**In a real SOC investigation:** Root activity via pts/0 at an unusual time, correlated with a system crash and no corresponding authentication trail, is a high-priority pattern warranting immediate investigation — but "confirmed compromise" requires ruling out: legitimate su/sudo escalation from an already-authenticated session, log rotation/retention gaps, and the crash being unrelated to the session's origin. Check who -a for the source field, check the escalating account's own auth.log entry, check log file timestamps/integrity, before elevating this from "urgent to investigate" to "confirmed.
+**In a real SOC investigation:** Root activity via pts/0 at an unusual time, correlated with a system crash and no corresponding authentication trail, is a high-priority pattern warranting immediate investigation — but "confirmed compromise" requires ruling out: legitimate `su`/`sudo` escalation from an already-authenticated session, log rotation/retention gaps, and the crash being unrelated to the session's origin. Check `who -a` for the source field, check the escalating account's own auth.log entry, check log file timestamps/integrity, before elevating this from "urgent to investigate" to "confirmed.
 
 ---
 
