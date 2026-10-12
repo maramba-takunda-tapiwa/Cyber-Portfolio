@@ -21,6 +21,4 @@ timestamp correlation · Wireshark packet analysis
 - `00-home-lab/` — lab environment setup and troubleshooting log
 - `01-networking/`, `02-operating-systems/` — foundational study notes, kept for reference
 
-## Currently working on
-Attack 3 (FTP/vsftpd CVE exploitation) and a Sigma detection rule for the 
-port-scan pattern identified in Attack 1.
+
