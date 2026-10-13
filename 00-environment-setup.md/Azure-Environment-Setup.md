@@ -5,7 +5,7 @@ Establish a secure, isolated cloud lab environment in Microsoft Azure to host an
 
 ## 2. Architecture & Topology
 * **Resource Group:** `rg-ad-lab-sec`
-* **Region:** Austria East
+* **Region:** North Italy
 * **Virtual Network (VNet):** `vnet-ad-lab` (`10.0.0.0/16`)
 
 ### Subnet Breakdown
