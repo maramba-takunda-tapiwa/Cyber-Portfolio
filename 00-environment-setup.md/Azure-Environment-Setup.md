@@ -19,10 +19,10 @@ Establish a secure, isolated cloud lab environment in Microsoft Azure to host an
 * **Cloud Platform:** Azure for Students
 * **Domain Controller (DC):** 
   * OS: Windows Server [2022/2019 Datacenter]
-  * Private IP: []
+  * Private IP: [10.0.1.0/24]
 * **Client Workstation:** 
   * OS: Windows [10/11 Pro or Enterprise]
-  * Private IP: []
+  * Private IP: [10.0.2.0/24]
 
 ## 4. Implementation Steps
 1. **Subscription & Resource Group:** Provisioned via Azure for Students credits and deployed `rg-ad-lab-sec`.
