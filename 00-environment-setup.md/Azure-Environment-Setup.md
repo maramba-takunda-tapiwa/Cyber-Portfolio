@@ -5,14 +5,14 @@ I have to establish a secure, isolated cloud lab environment in Microsoft Azure 
 
 ## 2. Architecture & Topology
 * **Resource Group:** `rg-ad-lab-sec`
-* **Region:** Central Poland
-* **Virtual Network (VNet):** `vnet-ad-lab` (`10.0.0.0/16`)
+* **Region:** Poland Central
+* **Virtual Network (VNet):** `vn-ad` (`10.0.0.0/16`)
 
 ### Subnet Breakdown
 | Subnet Name | CIDR Block | Purpose |
 | :--- | :--- | :--- |
 | `snet-dc` | `10.0.1.0/24` | Domain Controller (Central Server) |
-| `snet-client` | `10.0.2.0/24` | Domain-joined Workstations (Our Machines and Users)|
+| `snet-workstation` | `10.0.2.0/24` | Domain-joined Workstations (Our Machines and Users)|
 
 
 ## 3. Component Specifications
@@ -26,7 +26,7 @@ I have to establish a secure, isolated cloud lab environment in Microsoft Azure 
 
 ## 4. Implementation Steps
 1. **Subscription & Resource Group:** Provisioned via Azure for Students credits and deployed `rg-ad-lab-sec`.
-2. **VNet Configuration:** Created `vnet-ad-lab` with custom address space and segmented subnets.
+2. **VNet Configuration:** Created `vn-ad` with custom address space and segmented subnets.
 
 ## Regions, Zones, and VM Size Availability
 
@@ -74,12 +74,13 @@ I then had to ensure that DC promotion succeeded , I had to run the `dcdiag` in 
 We want to see 'passed test' specifically on DNS because Active Directory relies heavily on DNS to locate the Domain Controllers and services . For Advertising , it is important because it checks whether the DC is correctly advertising itself as a Domain Controller through Active Diretory's DC locator mechanism and last but not least , Netlogon . The Netlogon is a windows which supports secure channel operations , Domain authentication functions and DC locator registration .
 <img width="512" height="47" alt="image" src="https://github.com/user-attachments/assets/53f530b1-1a98-4f8b-b291-85997fc6250a" />
 <img width="515" height="33" alt="image" src="https://github.com/user-attachments/assets/dd5aba6e-b632-43c4-ab2b-41383d7a30cb" />
-<img width="565" height="192" alt="image" src="https://github.com/user-attachments/assets/be955906-5a6b-4e2a-bffd-ffcadad256ca" />
+<img width="770" height="767" alt="image" src="https://github.com/user-attachments/assets/3462d184-78b0-44e1-bd12-447601f2064b" />
+
 
 
 
 ## Creating an Organizational Unit(OU)
-I then had to create an OU in which to organize our Domain user's into structure. This is to apply GPO's to them .I created 3 user accounts with their associated passwords which were quite simple , this is for future purposes - our password spray attack . 
+I then had to create an OU in which to organize our Domain user's into structure. This is to apply GPO's to them .I created 3 user accounts with their associated passwords which were quite simple under the group name called `Lab-Users` , The password were relatively weak but did not break the password policy which enforces password complexity and also for the password-spray that we are going to do later on.
 <img width="721" height="293" alt="image" src="https://github.com/user-attachments/assets/74936a25-7794-4ba0-830f-6998cbfa74f2" />
 
 
