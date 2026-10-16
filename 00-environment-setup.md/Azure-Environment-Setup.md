@@ -13,7 +13,7 @@ I have to establish a secure, isolated cloud lab environment in Microsoft Azure 
 | :--- | :--- | :--- |
 | `snet-dc` | `10.0.1.0/24` | Domain Controller (Central Server) |
 | `snet-client` | `10.0.2.0/24` | Domain-joined Workstations (Our Machines and Users)|
-| `AzureBastionSubnet` | `10.0.3.0/26` | Secure RDP/SSH Management Access |
+
 
 ## 3. Component Specifications
 * **Cloud Platform:** Azure for Students
@@ -80,6 +80,8 @@ We want to see 'passed test' specifically on DNS because Active Directory relies
 
 ## Creating an Organizational Unit(OU)
 I then had to create an OU in which to organize our Domain user's into structure. This is to apply GPO's to them .I created 3 user accounts with their associated passwords which were quite simple , this is for future purposes - our password spray attack . 
+<img width="721" height="293" alt="image" src="https://github.com/user-attachments/assets/74936a25-7794-4ba0-830f-6998cbfa74f2" />
+
 
 ## Installing and Configuring Sysmon 
 We have to install Sysmon on our VM because it helps us record the system activity which is happening on our server which is the Domain Controller such as for example Process creation and command line arguments , network connections initiated by processes . We then have to also download the SwiftOnSecurity configuration file which tells Sysmon what to monitor , what to include and what to exclude because without this file , enabling everything can generate huge amounts of noise. This was the command I ran after installing the two through GUI , `   .\Sysmon64.exe -accepteula -i sysmonconfig-export.xml` and ran `dcdiag` to check if everything is running perfectly . This was all done on the Windows VM . 
