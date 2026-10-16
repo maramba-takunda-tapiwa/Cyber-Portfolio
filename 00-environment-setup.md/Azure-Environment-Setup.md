@@ -90,3 +90,8 @@ I had to create a storage layer in which Sentinel sits on top off. This was done
 I had a small hiccup that I encountered where the AMA only pulls the standard security events but it does not automatically pull Sysmon events because Sysmon has it dedicated log channel `Microsoft-Windows-Sysmon/Operational`. So I then had to create a second custom DCR to manually specify the Xpath/channel `Microsoft-Windows-Sysmon/Operational` targeting the same DC sending to the same workspace where our Sentinel is located. 
 
 Now I had to verify both log types are actually arriving , had to run these two separate commands in the KQL query window : `SecurityEvent | take 10` and `Event | where Source == "Microsoft-Windows-Sysmon" | take 10` where they both returned logs . 
+
+<img width="1478" height="537" alt="image" src="https://github.com/user-attachments/assets/2dafde62-10e2-4b1f-8be2-68e499b357b5" />
+<img width="1482" height="530" alt="image" src="https://github.com/user-attachments/assets/5fb1ee82-c54d-4b43-a704-45bfaea8fb1e" />
+
+
