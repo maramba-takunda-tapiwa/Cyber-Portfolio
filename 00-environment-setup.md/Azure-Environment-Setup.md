@@ -71,8 +71,12 @@ Administrator. I then promoted the server to a Domain Controller , picked a lab-
 domain which I named adlab.local and set the password.
 
 I then had to ensure that DC promotion succeeded , I had to run the `dcdiag` in which it returned 'passed test' on every line especially for DNS, Advertising and NetLogon. 
-We want to see 'passed test' specifically on DNS because Active Directory relies heavily on DNS to locate the Domain Controllers and services . For Advertising , it is important because it checks whether the DC is correctly advertising itself as a Domain Controller through Active Diretory's DC locator mechanism <img width="512" height="47" alt="image" src="https://github.com/user-attachments/assets/53f530b1-1a98-4f8b-b291-85997fc6250a" />
-and last but not least , Netlogon . The Netlogon is a windows which supports secure channel operations , Domain authentication functions and DC locator registration .
+We want to see 'passed test' specifically on DNS because Active Directory relies heavily on DNS to locate the Domain Controllers and services . For Advertising , it is important because it checks whether the DC is correctly advertising itself as a Domain Controller through Active Diretory's DC locator mechanism and last but not least , Netlogon . The Netlogon is a windows which supports secure channel operations , Domain authentication functions and DC locator registration .
+<img width="512" height="47" alt="image" src="https://github.com/user-attachments/assets/53f530b1-1a98-4f8b-b291-85997fc6250a" />
+<img width="515" height="33" alt="image" src="https://github.com/user-attachments/assets/dd5aba6e-b632-43c4-ab2b-41383d7a30cb" />
+<img width="565" height="192" alt="image" src="https://github.com/user-attachments/assets/be955906-5a6b-4e2a-bffd-ffcadad256ca" />
+
+
 
 ## Creating an Organizational Unit(OU)
 I then had to create an OU in which to organize our Domain user's into structure. This is to apply GPO's to them .I created 3 user accounts with their associated passwords which were quite simple , this is for future purposes - our password spray attack . 
