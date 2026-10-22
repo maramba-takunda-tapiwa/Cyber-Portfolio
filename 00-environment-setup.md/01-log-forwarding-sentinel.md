@@ -1,0 +1,12 @@
+## Installing and Configuring Sysmon 
+We have to install Sysmon on our VM because it helps us record the system activity which is happening on our server which is the Domain Controller such as for example Process creation and command line arguments , network connections initiated by processes . We then have to also download the SwiftOnSecurity configuration file which tells Sysmon what to monitor , what to include and what to exclude because without this file , enabling everything can generate huge amounts of noise. This was the command I ran after installing the two through GUI , `   .\Sysmon64.exe -accepteula -i sysmonconfig-export.xml` and ran `dcdiag` to check if everything is running perfectly . This was all done on the Windows VM . 
+
+## Sysmon and Windows Security events channels 
+I had to create a storage layer in which Sentinel sits on top off. This was done through making a Log Analytics workspace `law-ad-space` in Azure portal then enabled Microsoft Sentinel in that workspace of I had created - This is to turn the plain logs in our storage layer into an actual SIEM with analytics/alerting capabilities. I then had to connect the standard Windows Security event via AMA(Azure Monitor Agent) because it is responsible for collecting certain type of logs and deciding where those logs go to based on the DCR(Data Collection Rule) we define. Had to select our DC as the target resource because it is the one which will be monitoring for attacks against our AD. 
+
+I had a small hiccup that I encountered where the AMA only pulls the standard security events but it does not automatically pull Sysmon events because Sysmon has it dedicated log channel `Microsoft-Windows-Sysmon/Operational`. So I then had to create a second custom DCR to manually specify the Xpath/channel `Microsoft-Windows-Sysmon/Operational` targeting the same DC sending to the same workspace where our Sentinel is located. 
+
+Now I had to verify both log types are actually arriving , had to run these two separate commands in the KQL query window : `SecurityEvent | take 10` and `Event | where Source == "Microsoft-Windows-Sysmon" | take 10` where they both returned logs . 
+
+<img width="1478" height="537" alt="image" src="https://github.com/user-attachments/assets/2dafde62-10e2-4b1f-8be2-68e499b357b5" />
+<img width="1482" height="530" alt="image" src="https://github.com/user-attachments/assets/5fb1ee82-c54d-4b43-a704-45bfaea8fb1e" />
